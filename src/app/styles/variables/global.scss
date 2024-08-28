@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+$font-family-main: "Open Sans", sans-serif;
+
+$font-size-m: 13px;
+$font-line-m: 1.5;
+$font-m: #{$font-size-m} / #{$font-line-m} #{$font-family-main};
+
+$font-size-l: 24px;
+$font-line-l: 1.2;
+$font-l: #{$font-size-l} / #{$font-line-l} #{$font-family-main};
