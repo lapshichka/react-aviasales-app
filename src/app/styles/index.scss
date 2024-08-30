@@ -3,10 +3,45 @@
 @import 'themes/dark.scss';
 @import 'reset';
 
+html,
+body {
+  height: 100vh;
+  line-height: 1;
+  background: var(--bg-color);
+}
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main {
+  flex: 1 1 auto;
+}
+[class*="__container"] {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .app {
   font: $font-m;
   background: var(--bg-color);
   color: var(--primary-color);
 
   min-height: 100vh;
+}
+
+.card-them {
+  background: var(--secondary-bg-color);
+  border-radius: 5px;
+}
+
+.btn-them {
+  background: var(--highlight-color);
+}
+
+.large-text {
+  font: $font-l;
+  color: var(--highlight-color);
 }

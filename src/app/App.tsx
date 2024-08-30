@@ -3,16 +3,11 @@ import './styles/index.scss';
 import { MainPage } from 'pages/MainPage';
 
 const App = () => {
-  const {theme, toggleTheme} = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={`app ${theme}`}>
-      <button onClick={toggleTheme}>
-        тема
-      </button>
       <MainPage />
-      <p>lflflflflfl</p>
-      <p>ggggggg</p>
     </div>
   );
 };
