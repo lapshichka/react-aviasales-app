@@ -31,7 +31,11 @@ export const Tabs: React.FC = () => {
 
           return (
             <li key={name} className={`${cls.tab__item} ${className}`}>
-              <button type="button" onClick={() => handleTabChange(name)}>
+              <button
+                type="button"
+                style={{ width: '100%', height: '100%', padding: '15px 0' }}
+                onClick={() => handleTabChange(name)}
+              >
                 {label}
               </button>
             </li>
