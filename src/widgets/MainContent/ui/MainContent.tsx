@@ -1,7 +1,7 @@
 import React from 'react';
-import { Filters } from 'widgets/Filters';
 import { TicketList } from 'widgets/TicketList';
-import { Tabs } from 'widgets/Tabs';
+import { Filters } from 'entities/Filters';
+import { Tabs } from 'entities/Tabs';
 import cls from './MainContent.module.scss';
 
 export const MainContent = () => (
@@ -18,7 +18,9 @@ export const MainContent = () => (
         </div>
         <div className="ticket">
           <TicketList />
-          <button type="button" className={`${cls.ticket__btn} btn-them`}>Показать еще 5 билетов</button>
+          <button type="button" className={`${cls.ticket__btn} btn-them`}>
+            Показать еще 5 билетов
+          </button>
         </div>
       </div>
     </div>

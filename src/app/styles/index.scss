@@ -45,3 +45,8 @@ body {
   font: $font-l;
   color: var(--highlight-color);
 }
+
+.selected {
+  background: var(--highlight-color);
+  color:#FFF ;
+}
