@@ -1,11 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import cls from './Tabs.module.scss';
 import { tabsActions } from '../model/slice/tabsSlice';
 import { getTab } from '../model/selectors/getTab';
+import { TabNames } from '../model/types/TabsSchema';
+import cls from './Tabs.module.scss';
 
 interface TabsData {
-  name: string,
+  name: TabNames,
   label: string,
 }
 export const Tabs: React.FC = () => {
@@ -13,12 +14,12 @@ export const Tabs: React.FC = () => {
   const tab = useSelector(getTab);
 
   const data: TabsData[] = [
-    { name: 'cheap', label: 'Самый дешевый' },
-    { name: 'fast', label: 'Самый быстрый' },
-    { name: 'optimal', label: 'Оптимальный' },
+    { name: TabNames.cheap, label: 'Самый дешевый' },
+    { name: TabNames.fast, label: 'Самый быстрый' },
+    { name: TabNames.optimal, label: 'Оптимальный' },
   ];
 
-  const handleTabChange = (tab: string) => {
+  const handleTabChange = (tab: TabNames) => {
     dispatch(tabsActions.onTabChange(tab));
   };
 
@@ -34,7 +35,7 @@ export const Tabs: React.FC = () => {
               <button
                 type="button"
                 style={{ width: '100%', height: '100%', padding: '15px 0' }}
-                onClick={() => handleTabChange(name)}
+                onClick={() => handleTabChange(TabNames[name])}
               >
                 {label}
               </button>

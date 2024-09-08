@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -33,6 +37,9 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'max-len': ['error', { ignoreComments: true, code: 100 }],
     'no-param-reassign': 'off',
+    'linebreak-style': ['error', 'unix'],
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'no-unused-vars': 'off',
   },
   globals: {
     __IS_DEV__: true,
