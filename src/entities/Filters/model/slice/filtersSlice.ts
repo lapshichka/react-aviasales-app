@@ -25,14 +25,12 @@ export const filtersSlice = createSlice({
       }
     },
 
-    allFilterOn: (state, { payload }: PayloadAction<FilterNames>) => {
-      if (payload === 'all') {
-        const filterAll = !state.all;
-        Object.keys(state).forEach((key: FilterNames) => {
-          state[key] = filterAll;
-        });
-        state.all = filterAll;
-      }
+    switchAllFilter: (state) => {
+      const filterAll = !state.all;
+      Object.keys(state).forEach((key: FilterNames) => {
+        state[key] = filterAll;
+      });
+      state.all = filterAll;
     },
   },
 });

@@ -17,5 +17,5 @@ export enum FilterNames {
 export interface FiltersData {
   name: FilterNames,
   label: string,
-  action: (filter: FilterNames) => void,
+  action: (filter?: FilterNames) => void,
 }
