@@ -38,20 +38,18 @@
     min-height: 35px;
   }
 
-  &__price{
-    font-weight: 600;
-  }
-
   &__info {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
     width: 80%;
   }
 
   &__info_details {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex: 2;
+    justify-content: space-between;
   }
 
   &__btn {
@@ -66,7 +64,7 @@
 .block_text {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
 
   &__title {
     color: #A0B0B9;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { filterActions } from '../model/slice/filtersSlice';
-import { FilterNames, FiltersData } from '../index';
 import { FilterItem } from './FilterItem';
 import cls from './Filters.module.scss';
+import { FilterNames, FiltersData } from '../model/types/FiltersSchema';
 
 export const Filters: React.FC = () => {
   const dispatch = useDispatch();

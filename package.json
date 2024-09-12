@@ -47,6 +47,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
+    "axios": "^1.7.7",
+    "date-fns": "^3.6.0",
     "parse-json": "^8.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
