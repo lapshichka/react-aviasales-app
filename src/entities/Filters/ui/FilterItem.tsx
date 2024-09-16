@@ -18,7 +18,7 @@ export const FilterItem: React.FC<FilterItemProps> = ({ name, label, onChange })
       <input
         type="checkbox"
         checked={filters[name]}
-        onClick={() => onChange(name)}
+        onChange={() => onChange(name)}
       />
       {label}
     </label>

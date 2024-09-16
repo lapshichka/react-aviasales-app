@@ -41,9 +41,9 @@ export const Filters: React.FC = () => {
   return (
     <ul className={cls.filter__list}>
       {
-        data.map(({ name, label, action: onChange }) => (
+        data.map(({ name, label, action }) => (
           <li className={cls.filter__item} key={name}>
-            <FilterItem name={name} label={label} onChange={onChange} />
+            <FilterItem name={name} label={label} onChange={action} />
           </li>
         ))
       }
