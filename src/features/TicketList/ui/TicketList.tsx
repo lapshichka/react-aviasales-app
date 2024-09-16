@@ -3,7 +3,6 @@ import {
   fetchSearchId, fetchTickets, getTicket, Ticket,
 } from 'entities/Ticket';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Flight } from 'shared/types/common';
 import { styles } from 'widgets/MainContent';
 
 export const TicketList: React.FC = () => {
@@ -17,7 +16,7 @@ export const TicketList: React.FC = () => {
     };
 
     fetchData();
-  }, [dispatch]);
+  }, []);
 
   let i = 0;
   return (
@@ -27,10 +26,15 @@ export const TicketList: React.FC = () => {
         return (
           <li key={i} className={`${styles.ticket__item} card-them`}>
             <div className={styles.ticket__header}>
-              <span className=" large-text">
-                {`${price} P`}
+              <span className="large-text">
+                {`${price.toLocaleString('ru-RU')} P`}
               </span>
-              <span className="ticket__airline">{carrier}</span>
+              <img
+                src={`https://pics.avs.io/99/36/${carrier}.png`}
+                alt="Авиакомпания"
+                width="110px"
+                height="36px"
+              />
             </div>
 
             <Ticket details={segments} />

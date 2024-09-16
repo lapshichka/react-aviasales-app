@@ -44,9 +44,7 @@ export const TicketDetails: React.FC<{details: TicketDetailsProps}> = ({ details
               <span className={styles.block_text__text}>{stops.join(', ')}</span>
             </div>
           ) : (
-            <div>
-              Нет пересадок
-            </div>
+            <div className={styles.block_text} />
           )
       }
     </div>
