@@ -1,6 +1,4 @@
-import {
-  createSlice, ActionReducerMapBuilder,
-} from '@reduxjs/toolkit';
+import { createSlice, ActionReducerMapBuilder } from '@reduxjs/toolkit';
 import { NoInfer } from '@reduxjs/toolkit/dist/tsHelpers';
 import { TicketSchema } from '../types/TicketSchema';
 import { fetchSearchId, fetchTickets } from '../services/ticketThunks';
@@ -8,6 +6,7 @@ import { fetchSearchId, fetchTickets } from '../services/ticketThunks';
 const initialState: TicketSchema = {
   key: undefined,
   tickets: [],
+  limit: 5,
   status: 'loading',
   error: undefined,
 };
@@ -15,7 +14,11 @@ const initialState: TicketSchema = {
 export const ticketSlice = createSlice({
   name: 'ticket',
   initialState,
-  reducers: {},
+  reducers: {
+    addFiveTickets: (state) => {
+      state.limit += 5;
+    },
+  },
   extraReducers: (builder: ActionReducerMapBuilder<NoInfer<TicketSchema>>) => {
     builder
       .addCase(fetchSearchId.pending, (state) => {

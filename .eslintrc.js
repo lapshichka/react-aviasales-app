@@ -35,7 +35,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'max-len': ['error', { ignoreComments: true, code: 120 }],
     'no-param-reassign': 'off',
     'linebreak-style': ['error', 'unix'],
     '@typescript-eslint/no-unused-vars': ['error'],

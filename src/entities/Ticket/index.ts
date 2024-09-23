@@ -1,9 +1,10 @@
+import { getLimit } from './model/selectors/getLimit';
 import { getTicket } from './model/selectors/getTicket';
 import { getStatus } from './model/selectors/getStatus';
 import { TicketSchema } from './model/types/TicketSchema';
 import { fetchSearchId, fetchTickets } from './model/services/ticketThunks';
 import { Ticket } from './ui/Ticket';
-import { ticketReducer } from './model/slice/ticketSlice';
+import { ticketActions, ticketReducer } from './model/slice/ticketSlice';
 
 export {
   Ticket,
@@ -13,4 +14,6 @@ export {
   fetchTickets,
   getTicket,
   getStatus,
+  ticketActions,
+  getLimit,
 };

@@ -34,6 +34,7 @@ export interface TicketData {
 export interface TicketSchema {
   key: string | undefined,
   tickets: TicketData[],
+  limit: number,
   status: 'loading' | 'resolved' | 'rejected',
   error: string | undefined,
 }

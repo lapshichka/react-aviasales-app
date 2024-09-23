@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
-import {
-  fetchSearchId, fetchTickets, getTicket, Ticket,
-} from 'entities/Ticket';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  fetchSearchId, fetchTickets, getLimit, Ticket,
+} from 'entities/Ticket';
 import { styles } from 'widgets/MainContent';
+import { selectTodosByFilter } from 'app/providers/StoreProvider';
 
 export const TicketList: React.FC = () => {
   const dispatch = useDispatch();
-  const tickrts = useSelector(getTicket);
+  const tickets = useSelector(selectTodosByFilter);
+  const limit = useSelector(getLimit);
 
   useEffect(() => {
     const fetchData = async () => {
       await dispatch(fetchSearchId());
-      dispatch(fetchTickets());
+      dispatch(fetchTickets(limit));
     };
 
     fetchData();
@@ -21,7 +23,7 @@ export const TicketList: React.FC = () => {
   let i = 0;
   return (
     <ul className={styles.ticket__list}>
-      {tickrts.map(({ price, carrier, segments }) => {
+      {tickets.map(({ price, carrier, segments }) => {
         i += 1;
         return (
           <li key={i} className={`${styles.ticket__item} card-them`}>

@@ -22,10 +22,10 @@ export const fetchSearchId = createAsyncThunk<fetchSearchIdResponse, void, { rej
 
 export const fetchTickets = createAsyncThunk<
   TicketData[],
-  void,
+  number,
   { state: StateSchema; rejectValue: string }>(
     'ticket/fetchTickets',
-    async (_, { getState, rejectWithValue }) => {
+    async (limit, { getState, rejectWithValue }) => {
       const { ticket } = getState();
       const { key } = ticket;
       let stop = false;
@@ -44,7 +44,7 @@ export const fetchTickets = createAsyncThunk<
           }
           const moreTickets = await fetchAllTickets();
           stop = res.data.stop;
-          return res.data.tickets.concat(moreTickets);
+          return res.data.tickets.concat(moreTickets).slice(0, limit);
         } catch (error) {
           if (error.response?.status === 500) {
             if (!stop) {

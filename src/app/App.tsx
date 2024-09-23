@@ -1,6 +1,6 @@
 import { useTheme } from 'app/providers/ThemeProvider';
-import './styles/index.scss';
 import { MainPage } from 'pages/MainPage';
+import './styles/index.scss';
 
 const App = () => {
   const { theme } = useTheme();

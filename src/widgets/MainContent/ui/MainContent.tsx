@@ -2,11 +2,12 @@ import React from 'react';
 import { TicketList } from 'features/TicketList';
 import { Filters } from 'entities/Filters';
 import { Tabs } from 'entities/Tabs';
-import { useSelector } from 'react-redux';
-import { getStatus } from 'entities/Ticket';
+import { useDispatch, useSelector } from 'react-redux';
+import { getStatus, ticketActions } from 'entities/Ticket';
 import cls from './MainContent.module.scss';
 
 export const MainContent = () => {
+  const dispatch = useDispatch();
   const status = useSelector(getStatus);
 
   return (
@@ -26,7 +27,11 @@ export const MainContent = () => {
             {status === 'rejected' && <h3>Error</h3>}
             <TicketList />
             {status === 'resolved' && (
-              <button type="button" className={`${cls.ticket__btn} btn-them`}>
+              <button
+                type="button"
+                className={`${cls.ticket__btn} btn-them`}
+                onClick={() => dispatch(ticketActions.addFiveTickets())}
+              >
                 Показать еще 5 билетов
               </button>
             )}
