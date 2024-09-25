@@ -1,0 +1,14 @@
+.filter {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__content {
+    display: flex;
+    flex: 0 1 auto;
+    align-items: center;
+    gap: 10px;
+  }
+}

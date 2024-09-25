@@ -1,7 +1,7 @@
-import { tabsReducer } from 'entities/Tabs/model/slice/tabsSlice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { filterReducer } from 'entities/Filters';
-import { ticketReducer } from 'entities/Ticket';
+import { filterReducer } from 'features/FiltersPanel';
+import { tabsReducer } from 'features/TabSelector';
+import { ticketReducer } from 'entities/ticket/TicketList';
 import { StateSchema } from './StateSchema';
 
 const rootReducer = combineReducers({

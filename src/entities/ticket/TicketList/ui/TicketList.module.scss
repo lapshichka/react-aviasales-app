@@ -1,0 +1,20 @@
+.ticket {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 5px 7px 8px 1px rgba(110, 110, 112, 0.2);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 35px;
+  }
+}

@@ -37,8 +37,46 @@ body {
   border-radius: 5px;
 }
 
-.btn-them {
+.btn {
+  width: 100%;
+  padding: 15px;
+  color: #FFF;
+  border-radius: 5px;
   background: var(--highlight-color);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background: var(--secondary-bg-color);
+  border: 1px solid #9ABBCE;
+  height: 20px;
+  width: 20px;
+  border-radius: 2px;
+  vertical-align: text-bottom;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    top: 0;
+  }
+
+  &:checked {
+    border-color: var(--highlight-color);
+
+    &::before {
+      border-right: 2px solid var(--highlight-color);
+      border-bottom: 2px solid var(--highlight-color);
+      height: 65%;
+      width: 35%;
+      transform: rotate(50deg) translateY(-10%) translateX(-10%);
+    }
+  }
 }
 
 .large-text {
@@ -50,4 +88,42 @@ body {
 .selected {
   background: var(--highlight-color);
   color:#FFF ;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid var(--highlight-color);
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+.error {
+  background: rgba(255,153,153,0.7);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__title {
+    font: $font-l;
+    font-weight: 600;
+    color: #ff1616;
+  }
+  &__message {
+    color: #000000;
+  }
 }

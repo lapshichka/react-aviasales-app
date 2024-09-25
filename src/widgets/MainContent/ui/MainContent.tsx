@@ -1,41 +1,33 @@
 import React from 'react';
-import { TicketList } from 'features/TicketList';
-import { Filters } from 'entities/Filters';
-import { Tabs } from 'entities/Tabs';
-import { useDispatch, useSelector } from 'react-redux';
-import { getStatus, ticketActions } from 'entities/Ticket';
+import { useSelector } from 'react-redux';
+import { FiltersPanel } from 'features/FiltersPanel';
+import { TabSelector } from 'features/TabSelector';
+import {
+  getError, getStatus, TicketList,
+} from 'entities/ticket/TicketList';
+import { ErrorIndicator, Loader } from 'shared';
 import cls from './MainContent.module.scss';
 
 export const MainContent = () => {
-  const dispatch = useDispatch();
   const status = useSelector(getStatus);
+  const error = useSelector(getError);
 
   return (
     <main className="main">
       <div className={cls.main__container}>
         <div className={`${cls.filter} card-them`}>
           <h3 className={cls.filter__title}>Количество пересадок</h3>
-          <Filters />
+          <FiltersPanel />
         </div>
 
-        <div>
-          <div className="tab">
-            <Tabs />
-          </div>
-          <div className="ticket">
-            {status === 'loading' && <h3>Loading...</h3>}
-            {status === 'rejected' && <h3>Error</h3>}
-            <TicketList />
-            {status === 'resolved' && (
-              <button
-                type="button"
-                className={`${cls.ticket__btn} btn-them`}
-                onClick={() => dispatch(ticketActions.addFiveTickets())}
-              >
-                Показать еще 5 билетов
-              </button>
-            )}
-          </div>
+        <div className={cls.tab}>
+          <TabSelector />
+        </div>
+
+        <div className={cls.ticket}>
+          {status === 'loading' && (<div className={cls.ticket__loader}><Loader /></div>)}
+          {status === 'rejected' && <ErrorIndicator title={error.name} message={error.message} />}
+          <TicketList />
         </div>
       </div>
     </main>

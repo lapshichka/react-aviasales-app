@@ -1,5 +1,1 @@
-import { Header } from './ui/Header';
-
-export {
-  Header,
-};
+export { Header } from './ui/Header';

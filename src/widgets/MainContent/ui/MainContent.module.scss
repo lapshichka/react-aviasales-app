@@ -1,8 +1,11 @@
 .main {
   &__container {
     display: grid;
-    grid-template-columns: 0.7fr 2fr;
-    gap: 20px;
+    grid-template-areas:
+          'filter tab'
+          'filter ticket';
+    grid-gap: 20px;
+    grid-template-columns: 0.8fr 2fr;
   }
 }
 
@@ -11,68 +14,25 @@
   max-height: 250px;
   box-shadow: 5px 7px 8px 1px rgba(110, 110, 112, 0.2);
 
+  grid-area: filter;
+  align-self: flex-start;
+
   &__title {
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
+}
+
+.tab {
+  grid-area: tab;
+  align-self: flex-start;
 }
 
 .ticket {
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    box-shadow: 5px 7px 8px 1px rgba(110, 110, 112, 0.2);
-  }
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    min-height: 35px;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
-    width: 80%;
-  }
-
-  &__info_details {
-    display: flex;
-    flex: 2;
-    justify-content: space-between;
-  }
-
-  &__btn {
-    width: 100%;
-    padding: 15px;
-    color: #FFF;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-}
-
-.block_text {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 30%;
-
-  &__title {
-    color: #A0B0B9;
-    text-transform: uppercase;
-  }
-
-  &__text {
-    font-weight: 600;
+  grid-area: ticket;
+  
+  &__loader {
+    text-align: center;
   }
 }

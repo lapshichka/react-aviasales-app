@@ -1,6 +1,6 @@
-import { FiltersSchema } from 'entities/Filters';
-import { TabsSchema } from 'entities/Tabs';
-import { TicketSchema } from 'entities/Ticket';
+import { TicketSchema } from 'entities/ticket/TicketList';
+import { FiltersSchema } from 'features/FiltersPanel';
+import { TabsSchema } from 'features/TabSelector';
 
 export interface StateSchema {
   filters: FiltersSchema,
