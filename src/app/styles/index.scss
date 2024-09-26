@@ -24,6 +24,11 @@ body {
   padding: 0 15px;
 }
 
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
 .app {
   font: $font-m;
   background: var(--bg-color);

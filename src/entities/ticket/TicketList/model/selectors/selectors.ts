@@ -19,7 +19,7 @@ export const selectTodosByFilter = createSelector(
 
     if (allowedTransfers.length > 0) {
       filtered = filtered
-        .filter(({ segments }) => segments.every(({ stops }) => allowedTransfers.includes(stops.length)));
+        .filter(({ segments }) => segments.some(({ stops }) => allowedTransfers.includes(stops.length)));
     }
 
     if (activeTab === 'cheap') {
