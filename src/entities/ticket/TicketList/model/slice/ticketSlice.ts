@@ -6,7 +6,8 @@ import { fetchSearchId, fetchTickets } from '../services/ticketThunks';
 const initialState: TicketSchema = {
   key: undefined,
   tickets: [],
-  limit: 5,
+  displayTickets: [],
+  currentIndex: 0,
   status: 'loading',
   error: undefined,
 };
@@ -15,8 +16,13 @@ export const ticketSlice = createSlice({
   name: 'ticket',
   initialState,
   reducers: {
-    addFiveTickets: (state) => {
-      state.limit += 5;
+    loadMoreTickets: (state) => {
+      const start = state.currentIndex;
+      const end = start + 5;
+      const newTickets = state.tickets.slice(start, end);
+
+      state.displayTickets = [...state.displayTickets, ...newTickets];
+      state.currentIndex += 5;
     },
   },
   extraReducers: (builder: ActionReducerMapBuilder<NoInfer<TicketSchema>>) => {
@@ -40,6 +46,8 @@ export const ticketSlice = createSlice({
       .addCase(fetchTickets.fulfilled, (state, { payload }) => {
         state.status = 'resolved';
         state.tickets = payload;
+        state.displayTickets = payload.slice(0, 5);
+        state.currentIndex = 5;
       })
       .addCase(fetchTickets.rejected, (state, { payload }) => {
         state.status = 'rejected';

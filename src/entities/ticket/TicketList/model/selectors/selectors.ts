@@ -4,7 +4,7 @@ import { TicketData } from '../types/TicketSchema';
 
 export const selectedActiveFilter = (state: StateSchema) => state.filters;
 export const selectadActiveTab = (state: StateSchema) => state.tabs.tab;
-export const selectedAllTickets = (state: StateSchema) => state.ticket.tickets;
+export const selectedAllTickets = (state: StateSchema) => state.ticket.displayTickets;
 
 export const selectTodosByFilter = createSelector(
   [selectedAllTickets, selectedActiveFilter, selectadActiveTab],

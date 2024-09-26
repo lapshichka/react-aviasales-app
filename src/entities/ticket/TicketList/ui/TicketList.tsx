@@ -7,6 +7,7 @@ import { fetchSearchId, fetchTickets } from '../model/services/ticketThunks';
 import { selectTodosByFilter } from '../model/selectors/selectors';
 import { getStatus } from '../model/selectors/getStatus';
 import styles from './TicketList.module.scss';
+import { ticketActions } from '../model/slice/ticketSlice';
 
 export const TicketList: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,10 @@ export const TicketList: React.FC = () => {
 
     fetchData();
   }, []);
+
+  const handleLoadMoreTickets = () => {
+    dispatch(ticketActions.loadMoreTickets());
+  };
 
   return (
     <ul className={styles.ticket__list}>
@@ -43,8 +48,7 @@ export const TicketList: React.FC = () => {
         </li>
       ))}
       {status === 'resolved' && tickets.length === 0 && <div style={{ textAlign: 'center' }}><NoData /></div>}
-      {status === 'resolved' && tickets.length !== 0 && <Button />}
-
+      {status === 'resolved' && tickets.length !== 0 && <Button onClick={handleLoadMoreTickets} />}
     </ul>
   );
 };

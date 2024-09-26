@@ -44,7 +44,7 @@ export const fetchTickets = createAsyncThunk<
           }
           const moreTickets = await fetchAllTickets();
           stop = res.data.stop;
-          return res.data.tickets.concat(moreTickets).slice(0, 5);
+          return res.data.tickets.concat(moreTickets);
         } catch (error) {
           if (error.response?.status === 500) {
             if (!stop) {
