@@ -14,6 +14,7 @@ const CheckboxFilter: React.FC<CheckboxFilterProps> = ({
 }) => (
   <label htmlFor={name} className={styles.content}>
     <input
+      id={name}
       type="checkbox"
       checked={filters[name]}
       onChange={() => onChange(name)}
