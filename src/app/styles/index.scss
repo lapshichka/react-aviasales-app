@@ -1,6 +1,6 @@
 @import 'variables/global.scss';
-@import 'themes/normal.scss';
-@import 'themes/dark.scss';
+@import 'shared/styles/themes/normal.scss';
+@import 'shared/styles/themes/dark.scss';
 @import 'reset';
 
 html,
@@ -35,19 +35,6 @@ a {
   color: var(--primary-color);
 
   min-height: 100vh;
-}
-
-.card-them {
-  background: var(--secondary-bg-color);
-  border-radius: 5px;
-}
-
-.btn {
-  width: 100%;
-  padding: 15px;
-  color: #FFF;
-  border-radius: 5px;
-  background: var(--highlight-color);
 }
 
 input[type="checkbox"] {
@@ -88,47 +75,4 @@ input[type="checkbox"] {
   font: $font-l;
   font-weight: 600;
   color: var(--highlight-color);
-}
-
-.selected {
-  background: var(--highlight-color);
-  color:#FFF ;
-}
-
-.loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  border-top: 3px solid var(--highlight-color);
-  border-right: 3px solid transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} 
-
-.error {
-  background: rgba(255,153,153,0.7);
-  padding: 20px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  &__title {
-    font: $font-l;
-    font-weight: 600;
-    color: #ff1616;
-  }
-  &__message {
-    color: #000000;
-  }
 }

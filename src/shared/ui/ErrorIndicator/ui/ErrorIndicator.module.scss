@@ -1,0 +1,17 @@
+.error {
+  background: rgba(255,153,153,0.7);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ff1616;
+  }
+  &__message {
+    color: #000000;
+  }
+}

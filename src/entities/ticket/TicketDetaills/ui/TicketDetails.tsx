@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { format } from 'date-fns';
-import { DetailItem } from 'shared';
+import { DetailItem } from 'shared/ui/DetailItem';
 import styles from './TicketDetails.module.scss';
 
 interface TicketDetailsProps {

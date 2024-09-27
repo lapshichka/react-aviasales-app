@@ -1,7 +1,7 @@
 import React from 'react';
-import { InfoLink } from 'shared';
 import Telegram from 'shared/assets/icons/icon-telegram.svg';
 import Github from 'shared/assets/icons/icon-github.svg';
+import { InfoLink } from 'shared/ui/InfoLink';
 import styles from './Footer.module.scss';
 
 export const Footer = () => (

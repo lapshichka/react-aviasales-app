@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { TicketItem } from 'entities/ticket/TicketItem';
 import NoData from 'shared/assets/icons/no-data.svg';
-import { Button } from 'shared';
+import { Button } from 'shared/ui/Button';
 import { fetchSearchId, fetchTickets } from '../model/services/ticketThunks';
 import { selectTodosByFilter } from '../model/selectors/selectors';
 import { getStatus } from '../model/selectors/getStatus';
-import styles from './TicketList.module.scss';
 import { ticketActions } from '../model/slice/ticketSlice';
+import styles from './TicketList.module.scss';
 
 export const TicketList: React.FC = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export const TicketList: React.FC = () => {
     <ul className={styles.ticket__list}>
       {tickets.map(({ price, carrier, segments }, i) => (
         // eslint-disable-next-line react/no-array-index-key
-        <li key={i} className={`${styles.ticket__item} card-them`}>
+        <li key={i} className={styles.ticket__item}>
           <div className={styles.ticket__header}>
             <span className="large-text">
               {`${price.toLocaleString('ru-RU')} P`}

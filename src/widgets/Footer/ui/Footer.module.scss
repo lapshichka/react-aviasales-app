@@ -1,6 +1,3 @@
-@import 'app/styles/themes/dark.scss';
-@import 'app/styles/themes/dark.scss';
-
 .footer {
   padding: 20px 0 10px 0;
 
@@ -19,10 +16,5 @@
   &__social {
     display: flex;
     gap: 10px;
-  }
-
-  &__content {
-    display: flex;
-    gap: 5px;
   }
 }

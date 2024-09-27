@@ -1,8 +1,8 @@
 import React from 'react';
 import { FilterNames } from 'features/FiltersPanel/model/types/FiltersSchema';
+import styles from './CheckboxFilter.module.scss';
 
 interface CheckboxFilterProps {
-  className?: string,
   filters: Record<FilterNames, boolean>,
   name: FilterNames,
   label: string,
@@ -10,9 +10,9 @@ interface CheckboxFilterProps {
 }
 
 const CheckboxFilter: React.FC<CheckboxFilterProps> = ({
-  className = '', filters, name, label, onChange,
+  filters, name, label, onChange,
 }) => (
-  <label htmlFor={name} className={className}>
+  <label htmlFor={name} className={styles.content}>
     <input
       type="checkbox"
       checked={filters[name]}

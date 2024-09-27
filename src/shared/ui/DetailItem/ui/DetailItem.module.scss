@@ -1,0 +1,15 @@
+.block_text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 30%;
+
+  &__title {
+    color: #A0B0B9;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-weight: 600;
+  }
+}

@@ -1,19 +1,19 @@
 import React from 'react';
 import { TabNames } from 'features/TabSelector';
+import styles from './TabSelectButton.module.scss';
 
 interface TabSelectButtonProps {
-  className?: string,
   name: TabNames,
   label: string,
   onChange: (tab: TabNames) => void,
 }
 
 const TabSelectButton : React.FC<TabSelectButtonProps> = ({
-  className = '', name, label, onChange,
+  name, label, onChange,
 }) => (
   <button
     type="button"
-    className={className}
+    className={styles.btn}
     onClick={() => onChange(TabNames[name])}
   >
     {label}

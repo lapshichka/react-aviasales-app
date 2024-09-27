@@ -1,5 +1,5 @@
 import React from 'react';
-import { styles } from 'entities/ticket/TicketDetaills';
+import styles from './DetailItem.module.scss';
 
 interface DetailItemProps {
   title?: string,

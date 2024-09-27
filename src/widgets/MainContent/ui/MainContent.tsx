@@ -5,7 +5,8 @@ import { TabSelector } from 'features/TabSelector';
 import {
   getError, getStatus, TicketList,
 } from 'entities/ticket/TicketList';
-import { ErrorIndicator, Loader } from 'shared';
+import { Loader } from 'shared/ui/Loader';
+import { ErrorIndicator } from 'shared/ui/ErrorIndicator';
 import cls from './MainContent.module.scss';
 
 export const MainContent = () => {
@@ -15,7 +16,7 @@ export const MainContent = () => {
   return (
     <main className="main">
       <div className={cls.main__container}>
-        <div className={`${cls.filter} card-them`}>
+        <div className={cls.filter}>
           <h3 className={cls.filter__title}>Количество пересадок</h3>
           <FiltersPanel />
         </div>

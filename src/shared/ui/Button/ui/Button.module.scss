@@ -1,0 +1,15 @@
+@import 'shared/styles/themes/normal.scss';
+@import 'shared/styles/themes/dark.scss';
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  color: #FFF;
+  border-radius: 5px;
+  background: var(--highlight-color);
+  transition: background 0.3s;
+
+  &:hover {
+    background: var(--hover-color);
+  }
+}

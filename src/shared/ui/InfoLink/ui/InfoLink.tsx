@@ -1,5 +1,5 @@
 import React from 'react';
-import { styles } from 'widgets/Footer/index';
+import styles from './InfoLink.module.scss';
 
 interface InfoLinkProps {
   text?: string,
@@ -10,8 +10,8 @@ interface InfoLinkProps {
 const InfoLink: React.FC<InfoLinkProps> = ({
   text = '', href = '', children,
 }) => (
-  <div className={styles.footer__content}>
-    <a href={href} className={styles.footer__content_icon}>{children}</a>
+  <div className={styles.content}>
+    <a href={href}>{children}</a>
     <a href={href}>{text}</a>
   </div>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CheckboxFilter } from 'shared';
+import { CheckboxFilter } from 'shared/ui/CheckboxFilter';
 import { FilterNames, FiltersData } from '../model/types/FiltersSchema';
 import { selectedActiveFilter } from '../model/selectors/selectedActiveFilter';
 import { filterActions } from '../model/slice/filtersSlice';
@@ -47,7 +47,6 @@ export const FiltersPanel: React.FC = () => {
         data.map(({ name, label, action }) => (
           <li className={cls.filter__item} key={name}>
             <CheckboxFilter
-              className={cls.filter__content}
               filters={filters}
               name={name}
               label={label}
